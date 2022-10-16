@@ -14,7 +14,6 @@
   <ul>
     {#each products as product}
       <li>{product.title}</li>
-	  <li><img src={product.thumbnail}/></li>
 	  <li>{product.description}</li>
     {/each}
   </ul>
