@@ -1,48 +1,52 @@
 <script>
-	export let data;
-	let { products } = data;
-	console.log(products)
+  export let data;
+  let { products } = data;
+  console.log(products);
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+  <title>Home</title>
+  <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
+  <h2>Learn Sveltekit</h2>
 
-	<h2>
-		Learn Sveltekit 
-	</h2>
-
+  <ul>
+    {#each products as product}
+      <li>{product.title}</li>
+	  <li><img src={product.thumbnail}/></li>
+	  <li>{product.description}</li>
+    {/each}
+  </ul>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
 
-	h1 {
-		width: 100%;
-	}
+  h1 {
+    width: 100%;
+  }
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
+  .welcome {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0 0 calc(100% * 495 / 2048) 0;
+  }
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+  .welcome img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: block;
+  }
 </style>
