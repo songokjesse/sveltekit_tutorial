@@ -1,7 +1,6 @@
 <script>
   export let data;
   let { products } = data;
-  console.log(products);
 </script>
 
 <svelte:head>
